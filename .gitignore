@@ -1,0 +1,14 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Storage (keep folder, ignore contents)
+storage/*
+!storage/.htaccess
+
+# PHP logs
+*.log
