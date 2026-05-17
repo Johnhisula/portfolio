@@ -20,7 +20,7 @@
                 </div>
 
                 <h1 class="hero-title">
-                    Hi, I'm
+                    Hi, I am
                     <span class="text-gradient"><?= e($site['name']) ?></span>
                 </h1>
 
