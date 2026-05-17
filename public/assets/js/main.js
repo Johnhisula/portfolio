@@ -11,6 +11,37 @@ if (nav) {
   onScroll();
 }
 
+// ── 1b. Hamburger manual toggle (mobile fallback) ──────────
+(function () {
+  const toggler = document.querySelector('.navbar-toggler');
+  const menu    = document.getElementById('navbarMenu');
+  if (!toggler || !menu) return;
+
+  // Toggle open/close on tap
+  toggler.addEventListener('click', function (e) {
+    e.stopPropagation();
+    const isOpen = menu.classList.contains('show');
+    menu.classList.toggle('show', !isOpen);
+    toggler.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  // Close when any nav link is clicked (smooth UX on mobile)
+  menu.querySelectorAll('.nav-link, .hire-btn').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('show');
+      toggler.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Close when clicking outside the navbar
+  document.addEventListener('click', function (e) {
+    if (!nav.contains(e.target)) {
+      menu.classList.remove('show');
+      toggler.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+
 // ── 2. Active nav-link on scroll ──────────────────────────
 const sections   = document.querySelectorAll('section[id]');
 const navLinks   = document.querySelectorAll('#mainNav .nav-link');

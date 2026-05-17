@@ -72,6 +72,7 @@ body {
   border-bottom: 1px solid var(--border);
   transition: background var(--transition), padding var(--transition);
   padding: .75rem 0;
+  z-index: 1050;
 }
 #mainNav.scrolled {
   padding: .4rem 0;
