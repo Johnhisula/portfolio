@@ -1,4 +1,25 @@
-<?php $projects = PROJECTS; ?>
+<?php
+$projects = PROJECTS;
+
+// ── Pull in contact-form image submissions ────────────────
+$submittedCards = [];
+$msgsFile = STORAGE_PATH . '/messages.json';
+if (file_exists($msgsFile)) {
+    $msgs = json_decode(file_get_contents($msgsFile), true) ?? [];
+    foreach ($msgs as $msg) {
+        $att = $msg['attachment'] ?? null;
+        if ($att && !empty($att['is_image']) && !empty($att['web_path'])) {
+            $submittedCards[] = [
+                'image'   => $att['web_path'],
+                'title'   => !empty($msg['subject']) ? $msg['subject'] : 'Submitted Work',
+                'desc'    => !empty($msg['message']) ? mb_strimwidth($msg['message'], 0, 120, '…') : '',
+                'from'    => $msg['name'] ?? 'Anonymous',
+                'date'    => isset($msg['date']) ? date('M j, Y', strtotime($msg['date'])) : '',
+            ];
+        }
+    }
+}
+?>
 <section id="projects" class="section-padded" aria-labelledby="projects-heading">
     <div class="container">
 
@@ -83,6 +104,53 @@
             </div><!-- .project-col -->
             <?php endforeach; ?>
         </div><!-- #projectsGrid -->
+
+        <?php if (!empty($submittedCards)): ?>
+        <!-- Submitted images from contact form -->
+        <div class="mt-5 pt-4" data-aos="fade-up">
+            <div class="d-flex align-items-center gap-3 mb-4">
+                <h3 class="fs-5 fw-700 mb-0">
+                    <i class="bi bi-inbox-fill me-2 text-gradient"></i>
+                    Submitted Work
+                </h3>
+                <span class="tag-badge"><?= count($submittedCards) ?> submission<?= count($submittedCards) > 1 ? 's' : '' ?></span>
+            </div>
+            <div class="row gy-4">
+                <?php foreach ($submittedCards as $i => $card): ?>
+                <div class="col-sm-6 col-xl-4" data-aos="fade-up" data-aos-delay="<?= ($i % 3) * 100 ?>">
+                    <article class="project-card h-100">
+                        <div class="project-card__img-wrap">
+                            <img src="<?= e($card['image']) ?>"
+                                 alt="<?= e($card['title']) ?>"
+                                 class="project-card__img"
+                                 loading="lazy"
+                                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                            <div class="project-card__img-fallback" style="display:none" aria-hidden="true">
+                                <i class="bi bi-image"></i>
+                            </div>
+                            <div class="project-card__overlay">
+                                <span class="project-category-badge" style="background:rgba(6,182,212,.7)">Submitted</span>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title"><?= e($card['title']) ?></h3>
+                            <?php if ($card['desc']): ?>
+                            <p class="project-card__desc"><?= e($card['desc']) ?></p>
+                            <?php endif; ?>
+                            <div class="d-flex align-items-center gap-2 mt-auto pt-2">
+                                <i class="bi bi-person-fill" style="color:var(--accent-2);font-size:.85rem"></i>
+                                <span style="font-size:.8rem;color:var(--text-muted)"><?= e($card['from']) ?></span>
+                                <?php if ($card['date']): ?>
+                                <span class="ms-auto" style="font-size:.75rem;color:var(--text-muted)"><?= e($card['date']) ?></span>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <?php endif; ?>
 
     </div>
 </section>

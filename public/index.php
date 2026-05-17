@@ -6,6 +6,7 @@ define('BASE_PATH', dirname(__DIR__));
 define('INCLUDES_PATH', BASE_PATH . '/includes');
 define('ASSETS_PATH', '/assets');          // Web-root relative
 define('STORAGE_PATH', BASE_PATH . '/storage');
+define('PUBLIC_PATH',  BASE_PATH . '/public');
 
 // Load site configuration
 require_once INCLUDES_PATH . '/config.php';
