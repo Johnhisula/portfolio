@@ -41,19 +41,15 @@ $navLinks = [
                 </li>
                 <?php endforeach; ?>
 
-                <!-- Dark/Light mode toggle -->
-                <li class="nav-item ms-lg-2">
+                <!-- Theme toggle + Hire Me -->
+                <div id="navRight" class="d-flex align-items-center gap-2 ms-lg-3">
                     <button id="themeToggle" class="btn btn-sm theme-btn" aria-label="Toggle colour scheme">
                         <i class="bi bi-sun-fill" id="themeIcon" aria-hidden="true"></i>
                     </button>
-                </li>
-
-                <!-- Hire Me CTA -->
-                <li class="nav-item ms-lg-2">
                     <a href="#contact" class="btn btn-primary btn-sm px-3 hire-btn">
                         Hire Me
                     </a>
-                </li>
+                </div>
             </ul>
         </div>
 
