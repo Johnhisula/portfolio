@@ -56,7 +56,7 @@ if (themeToggle) {
 // ── 4. Typed role animation ───────────────────────────────
 const typedEl = document.getElementById('typedRole');
 if (typedEl) {
-  const strings  = ['UI/UX Designer', 'Front-End Developer', '4th Year BSIT Student', 'Web Designer'];
+  const strings  = ['UI/UX Designer', '4th Year BSIT Student', 'Web Designer'];
   let   strIdx   = 0, charIdx = 0, deleting = false;
 
   const type = () => {
