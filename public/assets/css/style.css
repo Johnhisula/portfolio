@@ -713,49 +713,64 @@ body {
   /* Global spacing */
   .section-padded { padding: 70px 0; }
 
-  /* Navbar mobile menu */
+  /* Navbar mobile — LEFT SIDE DRAWER */
   .navbar-collapse {
-    position: absolute;
-    top: 100%;
-    left: 0; right: 0;
-    background: rgba(10,10,15,.97);
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 75%;
+    max-width: 280px;
+    height: 100vh;
+    background: rgba(10,10,15,.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 1rem 1.25rem 1.25rem;
-    box-shadow: 0 20px 40px rgba(0,0,0,.5);
+    border-right: 1px solid var(--border);
+    padding: 5rem 1.25rem 2rem;
+    box-shadow: 4px 0 30px rgba(0,0,0,.6);
+    transition: left .3s cubic-bezier(.4,0,.2,1);
+    z-index: 1040;
+    overflow-y: auto;
+  }
+  .navbar-collapse.show {
+    left: 0;
+  }
+  /* Overlay behind drawer */
+  .navbar-collapse.show::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    left: 75%;
+    background: rgba(0,0,0,.5);
+    z-index: -1;
   }
   .navbar-collapse .navbar-nav {
     gap: 0 !important;
     align-items: stretch !important;
+    flex-direction: column !important;
   }
   .navbar-collapse .nav-link {
     font-size: 1rem !important;
     font-weight: 600 !important;
-    padding: .85rem 1rem !important;
+    padding: .9rem 1rem !important;
     border-radius: var(--radius);
     color: rgba(255,255,255,.85) !important;
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
   }
-  .navbar-collapse .nav-link:last-of-type { border-bottom: none; }
   .navbar-collapse .nav-link:hover { background: rgba(124,58,237,.1); color: #fff !important; }
   .navbar-collapse .nav-link::after { display: none; }
-
-  /* Theme + Hire Me row at bottom */
+  /* Theme + Hire Me row at bottom of drawer */
   #navRight {
-    margin-top: 1rem !important;
+    margin-top: 1.5rem !important;
     padding-top: 1rem;
     border-top: 1px solid var(--border);
     display: flex !important;
     justify-content: space-between;
     align-items: center;
   }
-  .hire-btn { padding: .6rem 1.5rem !important; font-size: .95rem !important; }
+  .hire-btn { padding: .6rem 1.2rem !important; font-size: .9rem !important; }
   .theme-btn { width: 44px !important; height: 44px !important; }
-
 
   /* Hero */
   .hero-section   { padding: 90px 0 50px; }

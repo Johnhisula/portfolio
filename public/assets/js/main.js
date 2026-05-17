@@ -11,34 +11,42 @@ if (nav) {
   onScroll();
 }
 
-// ── 1b. Hamburger manual toggle (mobile fallback) ──────────
+// ── 1b. Hamburger left-drawer toggle ──────────────────────
 (function () {
   const toggler = document.querySelector('.navbar-toggler');
   const menu    = document.getElementById('navbarMenu');
   if (!toggler || !menu) return;
 
-  // Toggle open/close on tap
-  toggler.addEventListener('click', function (e) {
+  // Create full-screen overlay
+  const overlay = document.createElement('div');
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1039;display:none;';
+  document.body.appendChild(overlay);
+
+  const openDrawer = () => {
+    menu.classList.add('show');
+    overlay.style.display = 'block';
+    toggler.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeDrawer = () => {
+    menu.classList.remove('show');
+    overlay.style.display = 'none';
+    toggler.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+
+  toggler.addEventListener('click', (e) => {
     e.stopPropagation();
-    const isOpen = menu.classList.contains('show');
-    menu.classList.toggle('show', !isOpen);
-    toggler.setAttribute('aria-expanded', String(!isOpen));
+    menu.classList.contains('show') ? closeDrawer() : openDrawer();
   });
 
-  // Close when any nav link is clicked (smooth UX on mobile)
+  // Close on overlay tap
+  overlay.addEventListener('click', closeDrawer);
+
+  // Close when any nav link is tapped
   menu.querySelectorAll('.nav-link, .hire-btn').forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.remove('show');
-      toggler.setAttribute('aria-expanded', 'false');
-    });
-  });
-
-  // Close when clicking outside the navbar
-  document.addEventListener('click', function (e) {
-    if (!nav.contains(e.target)) {
-      menu.classList.remove('show');
-      toggler.setAttribute('aria-expanded', 'false');
-    }
+    link.addEventListener('click', closeDrawer);
   });
 })();
 
