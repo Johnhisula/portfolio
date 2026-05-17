@@ -72,13 +72,14 @@ $formError   = $formError   ?? false;
                       class="contact-form"
                       method="POST"
                       action="#contact"
+                      enctype="multipart/form-data"
                       novalidate>
 
                     <input type="hidden" name="contact_submit" value="1">
 
                     <div class="row g-3">
 
-                        <!-- Name -->
+                        <!-- Name (optional) -->
                         <div class="col-sm-6">
                             <div class="form-floating">
                                 <input type="text"
@@ -86,12 +87,10 @@ $formError   = $formError   ?? false;
                                        name="name"
                                        class="form-control"
                                        placeholder="Jane Doe"
-                                       required
-                                       minlength="2"
                                        autocomplete="name"
                                        value="<?= e($_POST['name'] ?? '') ?>">
                                 <label for="contact_name">
-                                    <i class="bi bi-person-fill me-1" aria-hidden="true"></i>Full Name
+                                    <i class="bi bi-person-fill me-1" aria-hidden="true"></i>Full Name <span class="text-muted small">(optional)</span>
                                 </label>
                             </div>
                         </div>
@@ -142,6 +141,23 @@ $formError   = $formError   ?? false;
                                 <label for="contact_message">
                                     <i class="bi bi-pencil-fill me-1" aria-hidden="true"></i>Your Message
                                 </label>
+                            </div>
+                        </div>
+
+                        <!-- File Attachment (optional) -->
+                        <div class="col-12">
+                            <label for="contact_attachment" class="attach-label">
+                                <i class="bi bi-paperclip me-1"></i>Attachment <span class="text-muted small">(optional — PDF, image, doc · max 5MB)</span>
+                            </label>
+                            <div class="attach-drop-zone" id="attachDropZone">
+                                <i class="bi bi-cloud-arrow-up-fill attach-icon"></i>
+                                <p class="attach-hint mb-0">Drag & drop a file here or <span class="attach-browse">browse</span></p>
+                                <p class="attach-filename mb-0" id="attachFilename">No file chosen</p>
+                                <input type="file"
+                                       id="contact_attachment"
+                                       name="attachment"
+                                       class="attach-input"
+                                       accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.gif,.zip,.txt">
                             </div>
                         </div>
 

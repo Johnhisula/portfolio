@@ -169,3 +169,37 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => revealObs.observe(el));
   });
 });
+
+// ── 8. Attachment drop zone ────────────────────────────────
+(function () {
+  const zone     = document.getElementById('attachDropZone');
+  const input    = document.getElementById('contact_attachment');
+  const filename = document.getElementById('attachFilename');
+  if (!zone || !input || !filename) return;
+
+  const updateName = (file) => {
+    if (file) {
+      const kb = (file.size / 1024).toFixed(1);
+      filename.textContent = `📎 ${file.name} (${kb} KB)`;
+      filename.style.color = 'var(--accent-2)';
+    } else {
+      filename.textContent = 'No file chosen';
+      filename.style.color = '';
+    }
+  };
+
+  input.addEventListener('change', () => updateName(input.files[0] || null));
+
+  zone.addEventListener('dragover', (e) => { e.preventDefault(); zone.classList.add('drag-over'); });
+  zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+  zone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    zone.classList.remove('drag-over');
+    const file = e.dataTransfer.files[0];
+    if (!file) return;
+    const dt = new DataTransfer();
+    dt.items.add(file);
+    input.files = dt.files;
+    updateName(file);
+  });
+})();
