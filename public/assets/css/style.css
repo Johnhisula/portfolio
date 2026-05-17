@@ -101,12 +101,29 @@ body {
 .nav-link:hover::after { transform: scaleX(1); }
 
 /* Custom toggler */
-.navbar-toggler { border:none; padding:6px; background:transparent; }
-.navbar-toggler:focus { box-shadow:none; }
+.navbar-toggler {
+  border: 1px solid rgba(255,255,255,.2);
+  padding: 10px 12px;
+  background: rgba(255,255,255,.05);
+  border-radius: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 9999;
+  position: relative;
+}
+.navbar-toggler:focus { box-shadow: 0 0 0 2px rgba(124,58,237,.4); outline: none; }
+.navbar-toggler:hover { background: rgba(124,58,237,.15); border-color: var(--accent); }
 .toggler-icon {
-  display: block; width: 22px; height: 2px;
-  background: rgba(255,255,255,.8); border-radius: 99px;
-  margin: 4px 0; transition: var(--transition);
+  display: block; width: 24px; height: 2.5px;
+  background: rgba(255,255,255,.9); border-radius: 99px;
+  transition: var(--transition);
+  flex-shrink: 0;
 }
 
 /* Theme toggle */
