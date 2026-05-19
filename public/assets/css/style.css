@@ -558,6 +558,61 @@ body {
 }
 .submit-btn:hover { opacity:.85; transform:translateY(-2px); box-shadow:0 8px 30px var(--accent-glow); }
 
+
+/* ============================================================
+   HERO CLOCK WIDGET
+   ============================================================ */
+.hero-clock {
+  margin-top: 1.25rem;
+  background: rgba(255,255,255,.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.07);
+  animation: clockFadeIn .8s ease .4s both;
+}
+@keyframes clockFadeIn {
+  from { opacity:0; transform:translateY(10px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.hero-clock__greeting {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: .35rem;
+}
+.hero-clock__time {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  background: linear-gradient(135deg, #fff 30%, var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.hero-clock__sep {
+  -webkit-text-fill-color: var(--accent-2);
+  opacity: .8;
+}
+.hero-clock__sep.blink { animation: sepBlink 1s step-end infinite; }
+@keyframes sepBlink {
+  0%,100% { opacity:.8; }
+  50%      { opacity:.15; }
+}
+.hero-clock__date {
+  font-size: .75rem;
+  color: rgba(255,255,255,.45);
+  margin-top: .3rem;
+  font-weight: 500;
+}
+
 /* ============================================================
    FOOTER
    ============================================================ */

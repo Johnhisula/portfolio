@@ -3,6 +3,41 @@
    ============================================================ */
 'use strict';
 
+// ── 0. Real-time Clock ─────────────────────────────────────
+(function () {
+  const h  = document.getElementById('clockH');
+  const m  = document.getElementById('clockM');
+  const s  = document.getElementById('clockS');
+  const gr = document.getElementById('clockGreeting');
+  const dt = document.getElementById('clockDate');
+  if (!h) return;
+
+  const days   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const pad    = n => String(n).padStart(2, '0');
+
+  function tick() {
+    const now  = new Date();
+    const hour = now.getHours();
+    h.textContent  = pad(hour);
+    m.textContent  = pad(now.getMinutes());
+    s.textContent  = pad(now.getSeconds());
+
+    // Greeting
+    const greeting = hour < 12 ? 'Good Morning ☀️'
+                   : hour < 17 ? 'Good Afternoon 🌤️'
+                   : hour < 21 ? 'Good Evening 🌆'
+                   :             'Good Night 🌙';
+    if (gr) gr.textContent = greeting;
+
+    // Date: Monday, May 19, 2026
+    if (dt) dt.textContent = `${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+  }
+
+  tick();
+  setInterval(tick, 1000);
+})();
+
 // ── 1. Navbar scroll effect ────────────────────────────────
 const nav = document.getElementById('mainNav');
 if (nav) {
