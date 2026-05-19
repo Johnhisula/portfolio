@@ -7,7 +7,7 @@ define('SITE', [
     'name'        => 'Niño R. Hisula',
     'role'        => 'UI/UX Designer & Front-End Developer',
     'tagline'     => 'I design beautiful, user-friendly interfaces and bring them to life with clean, modern code.',
-    'email'       => 'nino.hisula@example.com',
+    'email'       => 'hisula.nino@dnsc.edu.ph',
     'github'      => 'https://github.com/',
     'linkedin'    => 'https://linkedin.com/',
     'twitter'     => 'https://twitter.com/',
@@ -188,5 +188,3 @@ define('CERTIFICATES', [
         'tags'       => ['Capstone', 'AidLens', 'CSWDO', 'Deployment'],
     ],
 ]);
-
-
