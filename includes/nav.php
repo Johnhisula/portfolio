@@ -12,24 +12,28 @@ $navLinks = [
 <nav class="navbar navbar-expand-lg fixed-top" id="mainNav" aria-label="Primary navigation">
     <div class="container">
 
-        <!-- Live Clock (left side) -->
-        <div class="nav-clock d-flex align-items-center gap-2 me-2 me-lg-3" aria-label="Current time">
-            <div class="nav-clock__time">
-                <span id="clockH">00</span><span class="nav-clock__sep blink">:</span><span id="clockM">00</span><span class="nav-clock__sep">:</span><span id="clockS">00</span>
-            </div>
-            <div class="nav-clock__meta d-none d-lg-flex">
-                <span class="nav-clock__greeting" id="clockGreeting">Good evening</span>
-                <span class="nav-clock__date" id="clockDate">Mon, May 19</span>
-            </div>
-        </div>
+        <!-- Left group: Clock + Brand -->
+        <div class="d-flex align-items-center gap-2">
 
-        <!-- Brand / Logo -->
-        <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#hero" aria-label="Home">
-            <span class="brand-avatar" aria-hidden="true">
-                <?= e(initials($site['name'])) ?>
-            </span>
-            <span class="brand-name"><?= e($site['name']) ?></span>
-        </a>
+            <!-- Live Clock -->
+            <div class="nav-clock d-flex align-items-center gap-2" aria-label="Current time">
+                <div class="nav-clock__time">
+                    <span id="clockH">00</span><span class="nav-clock__sep blink">:</span><span id="clockM">00</span><span class="nav-clock__sep">:</span><span id="clockS">00</span>
+                </div>
+                <div class="nav-clock__meta d-none d-lg-flex">
+                    <span class="nav-clock__greeting" id="clockGreeting">Good evening</span>
+                    <span class="nav-clock__date" id="clockDate">Mon, May 19</span>
+                </div>
+            </div>
+
+            <!-- Brand / Logo -->
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2 mb-0" href="#hero" aria-label="Home">
+                <span class="brand-avatar" aria-hidden="true">
+                    <?= e(initials($site['name'])) ?>
+                </span>
+                <span class="brand-name"><?= e($site['name']) ?></span>
+            </a>
+        </div>
 
         <!-- Mobile toggle -->
         <button class="navbar-toggler" type="button"

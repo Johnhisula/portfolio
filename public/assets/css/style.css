@@ -618,7 +618,8 @@ body {
    ============================================================ */
 .nav-clock {
   border-right: 1px solid var(--border);
-  padding-right: 1rem;
+  padding-right: .75rem;
+  flex-shrink: 0;
 }
 .nav-clock__time {
   font-size: 1.05rem;
