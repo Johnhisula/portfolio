@@ -614,6 +614,51 @@ body {
 }
 
 /* ============================================================
+   NAVBAR CLOCK
+   ============================================================ */
+.nav-clock {
+  border-right: 1px solid var(--border);
+  padding-right: 1rem;
+}
+.nav-clock__time {
+  font-size: 1.05rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  background: linear-gradient(135deg, #fff 30%, var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+.nav-clock__sep {
+  -webkit-text-fill-color: var(--accent-2);
+  opacity: .8;
+}
+.nav-clock__sep.blink { animation: sepBlink 1s step-end infinite; }
+@keyframes sepBlink {
+  0%,100% { opacity:.8; }
+  50%      { opacity:.15; }
+}
+.nav-clock__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  line-height: 1.1;
+}
+.nav-clock__greeting {
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+}
+.nav-clock__date {
+  font-size: .65rem;
+  color: rgba(255,255,255,.45);
+  font-weight: 500;
+}
+
+/* ============================================================
    FOOTER
    ============================================================ */
 .site-footer {
@@ -824,6 +869,8 @@ body {
     display: flex !important;
     justify-content: space-between;
     align-items: center;
+    /* Date display */
+    .nav-date { font-size: .75rem; color: var(--text-muted); }
   }
   .hire-btn { padding: .6rem 1.2rem !important; font-size: .9rem !important; }
   .theme-btn { width: 44px !important; height: 44px !important; }

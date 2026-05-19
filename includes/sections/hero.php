@@ -83,15 +83,6 @@
 }</code></pre>
                 </div>
 
-                <!-- ── Live Clock Widget ─────────────────── -->
-                <div class="hero-clock" id="heroClock" aria-label="Current time">
-                    <div class="hero-clock__greeting" id="clockGreeting">Good evening</div>
-                    <div class="hero-clock__time">
-                        <span id="clockH">00</span><span class="hero-clock__sep blink">:</span><span id="clockM">00</span><span class="hero-clock__sep">:</span><span id="clockS">00</span>
-                    </div>
-                    <div class="hero-clock__date" id="clockDate">Loading…</div>
-                </div>
-
             </div>
 
         </div>

@@ -30,8 +30,8 @@
                    :             'Good Night 🌙';
     if (gr) gr.textContent = greeting;
 
-    // Date: Monday, May 19, 2026
-    if (dt) dt.textContent = `${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+    // Date: Mon, May 19
+    if (dt) dt.textContent = `${days[now.getDay()].slice(0,3)}, ${months[now.getMonth()]} ${now.getDate()}`;
   }
 
   tick();
