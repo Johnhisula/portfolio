@@ -13,11 +13,11 @@ $navLinks = [
     <div class="container">
 
         <!-- Live Clock (left side) -->
-        <div class="nav-clock d-none d-lg-flex align-items-center gap-2 me-3" aria-label="Current time">
+        <div class="nav-clock d-flex align-items-center gap-2 me-2 me-lg-3" aria-label="Current time">
             <div class="nav-clock__time">
                 <span id="clockH">00</span><span class="nav-clock__sep blink">:</span><span id="clockM">00</span><span class="nav-clock__sep">:</span><span id="clockS">00</span>
             </div>
-            <div class="nav-clock__meta">
+            <div class="nav-clock__meta d-none d-lg-flex">
                 <span class="nav-clock__greeting" id="clockGreeting">Good evening</span>
                 <span class="nav-clock__date" id="clockDate">Mon, May 19</span>
             </div>
