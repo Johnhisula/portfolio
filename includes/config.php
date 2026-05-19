@@ -175,4 +175,18 @@ define('CERTIFICATES', [
         'icon'       => 'bi-diagram-3-fill',
         'tags'       => ['Networking', 'Packet Tracer', 'Cisco'],
     ],
+    [
+        'id'         => 'cert-6',
+        'title'      => 'Certificate of Completion – AidLens Capstone',
+        'issuer'     => 'City Social Welfare and Development Office (CSWDO)',
+        'date'       => 'April 13, 2026',
+        'expires'    => null,
+        'credential' => null,
+        'image_path' => ASSETS_PATH . '/images/certs/cert-cswdo-completion.jpg',
+        'color'      => '#1a6b9f',
+        'icon'       => 'bi-award-fill',
+        'tags'       => ['Capstone', 'AidLens', 'CSWDO', 'Deployment'],
+    ],
 ]);
+
+
