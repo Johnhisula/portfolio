@@ -614,49 +614,63 @@ body {
 }
 
 /* ============================================================
-   NAVBAR CLOCK
+   FLOATING CLOCK WIDGET (fixed bottom-right)
    ============================================================ */
-.nav-clock {
-  border-right: 1px solid var(--border);
-  padding-right: .75rem;
-  flex-shrink: 0;
+.float-clock {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 999;
+  background: rgba(15, 15, 25, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 16px;
+  padding: .85rem 1.2rem;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,.45),
+              inset 0 1px 0 rgba(255,255,255,.06);
+  animation: floatClockIn .6s cubic-bezier(.34,1.56,.64,1) both;
+  min-width: 130px;
 }
-.nav-clock__time {
-  font-size: 1.05rem;
+@keyframes floatClockIn {
+  from { opacity:0; transform:translateY(20px) scale(.9); }
+  to   { opacity:1; transform:translateY(0) scale(1); }
+}
+.float-clock:hover {
+  border-color: rgba(124,58,237,.4);
+  box-shadow: 0 12px 40px rgba(0,0,0,.5), 0 0 20px rgba(124,58,237,.15),
+              inset 0 1px 0 rgba(255,255,255,.08);
+  transition: all .3s ease;
+}
+.float-clock__greeting {
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: .3rem;
+}
+.float-clock__time {
+  font-size: 1.6rem;
   font-weight: 800;
+  letter-spacing: .03em;
   font-variant-numeric: tabular-nums;
-  background: linear-gradient(135deg, #fff 30%, var(--accent-2));
+  background: linear-gradient(135deg, #ffffff 40%, var(--accent-2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  line-height: 1;
-}
-.nav-clock__sep {
-  -webkit-text-fill-color: var(--accent-2);
-  opacity: .8;
-}
-.nav-clock__sep.blink { animation: sepBlink 1s step-end infinite; }
-@keyframes sepBlink {
-  0%,100% { opacity:.8; }
-  50%      { opacity:.15; }
-}
-.nav-clock__meta {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
   line-height: 1.1;
 }
-.nav-clock__greeting {
-  font-size: .6rem;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--accent-2);
+.float-clock__sep {
+  -webkit-text-fill-color: var(--accent-2);
+  animation: sepBlink 1s step-end infinite;
 }
-.nav-clock__date {
-  font-size: .65rem;
-  color: rgba(255,255,255,.45);
+.float-clock__date {
+  font-size: .68rem;
+  color: rgba(255,255,255,.4);
   font-weight: 500;
+  margin-top: .25rem;
 }
 
 /* ============================================================

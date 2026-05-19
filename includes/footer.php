@@ -46,3 +46,12 @@
         </div>
     </div>
 </footer>
+
+<!-- ── Floating Clock Widget ──────────────────────────────── -->
+<div class="float-clock" id="floatClock" aria-label="Live clock">
+    <div class="float-clock__greeting" id="clockGreeting">Good evening</div>
+    <div class="float-clock__time">
+        <span id="clockH">00</span><span class="float-clock__sep" id="clockSep">:</span><span id="clockM">00</span><span class="float-clock__sep">:</span><span id="clockS">00</span>
+    </div>
+    <div class="float-clock__date" id="clockDate">Mon, May 19</div>
+</div>
