@@ -50,6 +50,47 @@ if (nav) {
   });
 })();
 
+// ── 1c. Skills tab switcher ────────────────────────────────
+(function () {
+  const tabBtns    = document.querySelectorAll('.skills-tab-btn');
+  const tabPanes   = document.querySelectorAll('.skills-tab-content .tab-pane');
+  if (!tabBtns.length) return;
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-bs-target')?.replace('#', '');
+      if (!targetId) return;
+
+      // Update button states
+      tabBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      // Show correct pane
+      tabPanes.forEach(pane => {
+        pane.classList.remove('show', 'active');
+      });
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.classList.add('show', 'active');
+        // Re-trigger skill bar animations
+        target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+          bar.style.width = '0';
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              bar.style.width = bar.style.getPropertyValue('--target-width') ||
+                                getComputedStyle(bar).getPropertyValue('--target-width');
+            });
+          });
+        });
+      }
+    });
+  });
+})();
+
 // ── 2. Active nav-link on scroll ──────────────────────────
 const sections   = document.querySelectorAll('section[id]');
 const navLinks   = document.querySelectorAll('#mainNav .nav-link');
