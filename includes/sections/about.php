@@ -53,7 +53,7 @@
                         <?php
                         $facts = [
                             ['icon' => 'bi-geo-alt-fill',    'label' => 'Location',  'value' => 'Panabo City, Davao Del Norte'],
-                            ['icon' => 'bi-briefcase-fill',  'label' => 'Status',    'value' => 'Open to Internship / Opportunities'],
+                            ['icon' => 'bi-briefcase-fill',  'label' => 'Status',    'value' => 'Internship / Opportunities'],
                             ['icon' => 'bi-mortarboard-fill','label' => 'Education', 'value' => 'BSIT – Davao Del Norte State College'],
                             ['icon' => 'bi-envelope-fill',   'label' => 'Email',     'value' => $site['email']],
                         ];

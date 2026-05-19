@@ -104,7 +104,7 @@ define('PROJECTS', [
         'category'    => 'Frontend',
         'description' => 'This responsive personal portfolio website showcasing projects, skills, and certifications — built with pure PHP, Bootstrap 5, and custom CSS.',
         'tags'        => ['PHP', 'Bootstrap 5', 'CSS3', 'JavaScript', 'AOS'],
-        'image'       => ASSETS_PATH . '/images/project6.png',
+        'image'       => ASSETS_PATH . '/images/project6.jpg',
         'github'      => 'https://github.com/',
         'demo'        => '#',
         'long_desc'   => 'Designed and built this portfolio website from scratch using PHP for templating, Bootstrap 5 for responsive layout, and custom CSS for a dark-themed aesthetic with gradient accents. Features include a certificate lightbox gallery, animated skill bars, project modals, and a working contact form — all without any JavaScript framework.',
