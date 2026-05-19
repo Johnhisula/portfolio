@@ -39,9 +39,7 @@
                     <a href="#contact" class="btn btn-outline-light btn-lg hero-btn-secondary">
                         <i class="bi bi-send-fill me-2" aria-hidden="true"></i>Get In Touch
                     </a>
-                    <a href="<?= ASSETS_PATH ?>/files/resume.pdf" class="btn btn-ghost btn-lg" download>
-                        <i class="bi bi-download me-2" aria-hidden="true"></i>Resume
-                    </a>
+
                 </div>
 
                 <!-- Tech strip -->

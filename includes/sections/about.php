@@ -70,9 +70,7 @@
                         <a href="#contact" class="btn btn-primary">
                             <i class="bi bi-chat-dots-fill me-2" aria-hidden="true"></i>Let's Talk
                         </a>
-                        <a href="<?= ASSETS_PATH ?>/files/resume.pdf" class="btn btn-outline-secondary" download>
-                            <i class="bi bi-file-earmark-person-fill me-2" aria-hidden="true"></i>Download CV
-                        </a>
+
                     </div>
                 </div>
             </div>
