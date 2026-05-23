@@ -125,7 +125,7 @@ define('CERTIFICATES', [
         'image_path' => ASSETS_PATH . '/images/certs/cert-aidlens.png',
         'color'      => '#1a3c8f',
         'icon'       => 'bi-mortarboard-fill',
-        'tags'       => ['Capstone', 'BSIT', 'AidLens', 'DDNSC'],
+        'tags'       => ['Capstone', 'BSIT', 'AidLens', 'DNSC'],
     ],
     [
         'id'         => 'cert-2',
