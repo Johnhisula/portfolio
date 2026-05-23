@@ -15,7 +15,7 @@
             <div class="col-lg-5 text-center" data-aos="fade-right">
                 <div class="about-avatar-wrap">
                     <div class="about-avatar">
-                        <div class="avatar-initials"><?= e(initials($site['name'])) ?></div>
+                        <img src="<?= ASSETS_PATH ?>/images/profile.jpg" alt="<?= e($site['name']) ?>" class="avatar-img">
                     </div>
                     <!-- Floating stat bubbles -->
                     <div class="stat-bubble stat-bubble--tl" aria-label="4th year student">
