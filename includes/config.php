@@ -116,6 +116,18 @@ define('PROJECTS', [
 // ─────────────────────────────────────────────
 define('CERTIFICATES', [
     [
+        'id'         => 'cert-7',
+        'title'      => 'Certificate of Completion – On-the-Job Training',
+        'issuer'     => 'Davao del Norte State College – Institute of Computing',
+        'date'       => 'May 18, 2026',
+        'expires'    => null,
+        'credential' => null,
+        'image_path' => ASSETS_PATH . '/images/certs/cert-ojt.jpg',
+        'color'      => '#4f46e5',
+        'icon'       => 'bi-briefcase-fill',
+        'tags'       => ['OJT', 'BSIT', 'DNSC', 'Internship'],
+    ],
+    [
         'id'         => 'cert-1',
         'title'      => 'Capstone Certificate of Completion',
         'issuer'     => 'Davao Del Norte State College',
