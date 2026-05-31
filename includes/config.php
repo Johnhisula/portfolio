@@ -25,7 +25,7 @@ define('SKILLS', [
         ['name' => 'User Interface Design',  'level' => 86],
         ['name' => 'Canva',                  'level' => 90],
     ],
-    'Front-End Development' => [
+    'Front-End Developer' => [
         ['name' => 'HTML5 / CSS3',           'level' => 90],
         ['name' => 'JavaScript (ES6)',        'level' => 78],
         ['name' => 'Bootstrap 5',            'level' => 88],
