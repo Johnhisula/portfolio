@@ -3,7 +3,66 @@
    ============================================================ */
 'use strict';
 
-// ── 0. Real-time Clock ─────────────────────────────────────
+// ── 0. Welcome Intro Preloader ──────────────────────────────
+(function () {
+  const body = document.body;
+  const loader = document.getElementById('intro-loader');
+  const progressFill = document.querySelector('.intro-loader__progress-fill');
+  if (!loader || !progressFill) return;
+
+  body.classList.add('intro-loading');
+
+  let progress = 0;
+  let isLoaded = false;
+
+  // Organic preloader progress increment
+  const interval = setInterval(() => {
+    if (progress < 90) {
+      progress += Math.random() * 8 + 2; // Speed up organically
+    } else if (isLoaded) {
+      progress += 10; // Rapid finish once page resources are fully loaded
+    }
+
+    if (progress > 90 && !isLoaded) {
+      progress = 90; // Hold at 90% until page loads
+    }
+
+    if (progress >= 100) {
+      progress = 100;
+      clearInterval(interval);
+      
+      setTimeout(() => {
+        loader.classList.add('fade-out');
+        body.classList.remove('intro-loading');
+        body.classList.add('intro-loaded');
+        
+        // Notify other scripts (e.g., typing animation) to begin
+        document.dispatchEvent(new CustomEvent('introCompleted'));
+        
+        setTimeout(() => {
+          loader.remove();
+        }, 600);
+      }, 400);
+    }
+    progressFill.style.width = `${progress}%`;
+  }, 100);
+
+  // Set minimum presentation time of 1.5 seconds to show off the intro
+  const minTimePromise = new Promise(resolve => setTimeout(resolve, 1500));
+  const windowLoadPromise = new Promise(resolve => {
+    if (document.readyState === 'complete') {
+      resolve();
+    } else {
+      window.addEventListener('load', resolve);
+    }
+  });
+
+  Promise.all([minTimePromise, windowLoadPromise]).then(() => {
+    isLoaded = true;
+  });
+})();
+
+// ── 0b. Real-time Clock ─────────────────────────────────────
 (function () {
   const h  = document.getElementById('clockH');
   const m  = document.getElementById('clockM');
@@ -192,7 +251,11 @@ if (typedEl) {
     }
     setTimeout(type, delay);
   };
-  setTimeout(type, 700);
+
+  // Wait until the welcome intro completes before triggering typing
+  document.addEventListener('introCompleted', () => {
+    setTimeout(type, 500);
+  });
 }
 
 // ── 5. Skill bar animation ────────────────────────────────

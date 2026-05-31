@@ -43,6 +43,38 @@ if (isset($_SESSION['flash'])) {
 </head>
 <body>
 
+    <!-- Welcome Intro Preloader -->
+    <div id="intro-loader" class="intro-loader">
+        <div class="intro-loader__content">
+            <div class="intro-loader__logo">
+                <span class="intro-logo-text">NR</span>
+                <div class="intro-logo-ring"></div>
+            </div>
+            <div class="intro-loader__text-wrap">
+                <h1 class="intro-loader__title">
+                    <span class="intro-word word-1">WELCOME</span>
+                    <span class="intro-word word-2">TO</span>
+                    <span class="intro-word word-3">MY</span>
+                    <span class="intro-word word-4">PORTFOLIO</span>
+                </h1>
+                <p class="intro-loader__subtitle">Niño R. Hisula</p>
+            </div>
+            <div class="intro-loader__progress-bar">
+                <div class="intro-loader__progress-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <noscript>
+        <style>
+            .intro-loader { display: none !important; }
+            #main-content, #mainNav, .float-clock, .site-footer {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+
     <?php require_once INCLUDES_PATH . '/nav.php'; ?>
 
     <main id="main-content">
