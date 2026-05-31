@@ -88,6 +88,9 @@ if (isset($_SESSION['flash'])) {
 
     <?php require_once INCLUDES_PATH . '/footer.php'; ?>
 
+    <!-- Project Modals (outside main container to avoid stacking context issues) -->
+    <?php require_once INCLUDES_PATH . '/project_modals.php'; ?>
+
     <!-- Bootstrap 5.3 JS Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
