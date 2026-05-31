@@ -29,18 +29,18 @@
                 </div>
             </div>
 
-            <div class="modal-footer">
+            <div class="modal-footer d-flex flex-column flex-sm-row gap-2">
                 <a href="<?= e($project['github']) ?>" target="_blank" rel="noopener noreferrer"
-                   class="btn btn-outline-secondary">
+                   class="btn btn-outline-secondary w-100 w-sm-auto d-inline-flex align-items-center justify-content-center">
                     <i class="bi bi-github me-2" aria-hidden="true"></i>View on GitHub
                 </a>
                 <?php if ($project['demo'] !== '#'): ?>
                 <a href="<?= e($project['demo']) ?>" target="_blank" rel="noopener noreferrer"
-                   class="btn btn-primary">
+                   class="btn btn-primary w-100 w-sm-auto d-inline-flex align-items-center justify-content-center">
                     <i class="bi bi-box-arrow-up-right me-2" aria-hidden="true"></i>Live Demo
                 </a>
                 <?php endif; ?>
-                <button type="button" class="btn btn-ghost" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-ghost w-100 w-sm-auto justify-content-center" data-bs-dismiss="modal">Close</button>
             </div>
 
         </div>

@@ -968,9 +968,8 @@ body {
   /* Projects grid — full width on small phones */
   .project-card__img-wrap { height: 150px; }
 
-  /* Cert lightbox */
-  .cert-lightbox { padding: 1rem; }
-  .cert-lightbox__close { top: -2rem; }
+  /* Float clock */
+  .float-clock { display: none !important; }
 
   /* Contact */
   .contact-form { padding: 1rem; border-radius: var(--radius); }

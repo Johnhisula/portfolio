@@ -70,6 +70,35 @@
 .cert-lightbox__close:hover {
     background: rgba(255,255,255,.3);
 }
+
+@media (max-width: 767.98px) {
+    .cert-lightbox {
+        padding: 1rem;
+    }
+    .cert-lightbox__close {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        width: 44px;
+        height: 44px;
+        font-size: 1.25rem;
+        z-index: 10000;
+        border: 1px solid rgba(255,255,255,0.15);
+    }
+    .cert-lightbox__title {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        padding-right: 3.5rem; /* Leave space for the fixed close button */
+        text-align: left;
+    }
+    .cert-lightbox__img {
+        max-height: 75vh;
+        border-radius: 8px;
+    }
+}
 </style>
 
 <script>
