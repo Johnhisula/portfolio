@@ -34,7 +34,7 @@
                 <div class="about-content">
                     <p class="about-intro">
                         I'm a <strong>4th Year BSIT Student</strong> at <strong>Davao Del Norte State College</strong>,
-                        passionate about <strong>UI/UX Design</strong> and <strong>Front-End Development</strong> —
+                        passionate about <strong>UI/UX Design</strong> and being a <strong>Front-End Developer</strong> —
                         crafting clean, intuitive, and visually engaging digital experiences.
                     </p>
                     <p class="about-body">
