@@ -1,0 +1,20 @@
+Options -Indexes
+
+# Route everything through public/
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /portfolio-master/portfolio-master/
+
+    # Don't rewrite requests that already target the public directory
+    RewriteRule ^public/ - [L]
+
+    # Don't rewrite if the file exists in the project root
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^ - [L]
+
+    # Route root to public/index.php
+    RewriteRule ^$ public/index.php [L]
+
+    # Route everything else into public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

@@ -1,0 +1,108 @@
+<?php
+// ─────────────────────────────────────────────
+// Bootstrap application
+// ─────────────────────────────────────────────
+define('BASE_PATH', dirname(__DIR__));
+define('INCLUDES_PATH', BASE_PATH . '/includes');
+// Compute web base path dynamically so assets resolve correctly in any subdirectory
+$basePath = rtrim(dirname(dirname($_SERVER['SCRIPT_NAME'])), '/\\');
+define('ASSETS_PATH', $basePath . '/assets');          // Web-root relative
+define('STORAGE_PATH', BASE_PATH . '/storage');
+define('PUBLIC_PATH',  BASE_PATH . '/public');
+
+// Load site configuration
+require_once INCLUDES_PATH . '/config.php';
+
+// Load helper functions
+require_once INCLUDES_PATH . '/helpers.php';
+
+// Load message store (used by contact handler)
+require_once INCLUDES_PATH . '/admin/message_store.php';
+
+// Start session for contact-form flash messages
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Handle contact form POST
+$formMessage = null;
+$formError   = false;
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
+    require_once INCLUDES_PATH . '/contact_handler.php';
+}
+
+// Pull any flash message from session
+if (isset($_SESSION['flash'])) {
+    $formMessage = $_SESSION['flash']['message'];
+    $formError   = $_SESSION['flash']['error'];
+    unset($_SESSION['flash']);
+}
+?>
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <?php require_once INCLUDES_PATH . '/head.php'; ?>
+</head>
+<body>
+
+    <!-- Welcome Intro Preloader -->
+    <div id="intro-loader" class="intro-loader">
+        <div class="intro-loader__content">
+            <div class="intro-loader__logo">
+                <span class="intro-logo-text">NR</span>
+                <div class="intro-logo-ring"></div>
+            </div>
+            <div class="intro-loader__text-wrap">
+                <h1 class="intro-loader__title">
+                    <span class="intro-word word-1">WELCOME</span>
+                    <span class="intro-word word-2">TO</span>
+                    <span class="intro-word word-3">MY</span>
+                    <span class="intro-word word-4">PORTFOLIO</span>
+                </h1>
+                <p class="intro-loader__subtitle">Niño R. Hisula</p>
+            </div>
+            <div class="intro-loader__progress-bar">
+                <div class="intro-loader__progress-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <noscript>
+        <style>
+            .intro-loader { display: none !important; }
+            #main-content, #mainNav, .float-clock, .site-footer {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+
+    <?php require_once INCLUDES_PATH . '/nav.php'; ?>
+
+    <main id="main-content">
+        <?php require_once INCLUDES_PATH . '/sections/hero.php'; ?>
+        <?php require_once INCLUDES_PATH . '/sections/about.php'; ?>
+        <?php require_once INCLUDES_PATH . '/sections/skills.php'; ?>
+        <?php require_once INCLUDES_PATH . '/sections/projects.php'; ?>
+        <?php require_once INCLUDES_PATH . '/sections/certificates.php'; ?>
+        <?php require_once INCLUDES_PATH . '/sections/contact.php'; ?>
+    </main>
+
+    <?php require_once INCLUDES_PATH . '/footer.php'; ?>
+
+    <!-- Project Modals (outside main container to avoid stacking context issues) -->
+    <?php require_once INCLUDES_PATH . '/project_modals.php'; ?>
+
+    <!-- Certificate Lightbox Modal (outside main container to avoid stacking context issues) -->
+    <?php require_once INCLUDES_PATH . '/cert_lightbox.php'; ?>
+
+    <!-- Bootstrap 5.3 JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script src="<?= ASSETS_PATH ?>/js/main.js?v=<?= filemtime(PUBLIC_PATH . '/assets/js/main.js') ?>"></script>
+
+</body>
+</html>

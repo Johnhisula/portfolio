@@ -1,0 +1,24 @@
+/* Scroll-reveal — sections start visible, JS adds animation class only after page loads */
+[data-aos] {
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+/* JS adds this class after DOMContentLoaded to enable hidden-until-reveal behavior */
+[data-aos].aos-ready {
+  opacity: 0;
+}
+[data-aos].aos-ready[data-aos-delay="100"] { transition-delay: 0.1s; }
+[data-aos].aos-ready[data-aos-delay="200"] { transition-delay: 0.2s; }
+[data-aos].aos-ready[data-aos-delay="300"] { transition-delay: 0.3s; }
+[data-aos].aos-ready[data-aos-delay="400"] { transition-delay: 0.4s; }
+[data-aos].aos-ready[data-aos-delay="500"] { transition-delay: 0.5s; }
+
+[data-aos].aos-ready[data-aos="fade-right"] { transform: translateX(-30px); }
+[data-aos].aos-ready[data-aos="fade-left"]  { transform: translateX(30px); }
+[data-aos].aos-ready[data-aos="fade-up"]    { transform: translateY(30px); }
+
+/* Once revealed */
+[data-aos].revealed {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
