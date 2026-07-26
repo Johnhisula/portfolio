@@ -58,7 +58,7 @@
                         <?php
                         $facts = [
                             ['icon' => 'bi-geo-alt-fill',    'label' => 'Location',  'value' => 'Panabo City, Davao Del Norte'],
-                            ['icon' => 'bi-briefcase-fill',  'label' => 'Role',      'value' => 'Data Entry Specialist'],
+                            ['icon' => 'bi-briefcase-fill',  'label' => 'Role',      'value' => 'Front-End Developer & Data Entry Specialist'],
                             ['icon' => 'bi-search',           'label' => 'Status',    'value' => 'Open to Opportunities'],
                             ['icon' => 'bi-mortarboard-fill','label' => 'Education', 'value' => 'BS Information Technology – Davao Del Norte State College'],
                             ['icon' => 'bi-envelope-fill',   'label' => 'Email',     'value' => $site['email']],
