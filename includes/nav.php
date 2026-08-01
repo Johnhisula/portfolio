@@ -42,14 +42,16 @@ $navLinks = [
                 <?php endforeach; ?>
 
                 <!-- Theme toggle & Resume -->
-                <div id="navRight" class="d-flex align-items-center gap-2 ms-lg-3">
-                    <a href="<?= ASSETS_PATH ?>/files/Resume.pdf" class="btn btn-sm btn-primary" download>
-                        <i class="bi bi-file-earmark-arrow-down-fill me-1" aria-hidden="true"></i>Resume
-                    </a>
-                    <button id="themeToggle" class="btn btn-sm theme-btn" aria-label="Toggle colour scheme">
-                        <i class="bi bi-sun-fill" id="themeIcon" aria-hidden="true"></i>
-                    </button>
-                </div>
+                <li class="nav-item ms-lg-2">
+                    <div id="navRight" class="d-flex align-items-center gap-2">
+                        <a href="<?= ASSETS_PATH ?>/files/Resume.pdf" class="btn btn-sm btn-primary" download>
+                            <i class="bi bi-file-earmark-arrow-down-fill me-1" aria-hidden="true"></i>Resume
+                        </a>
+                        <button id="themeToggle" class="btn btn-sm theme-btn" aria-label="Toggle colour scheme">
+                            <i class="bi bi-sun-fill" id="themeIcon" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </li>
             </ul>
         </div>
 
