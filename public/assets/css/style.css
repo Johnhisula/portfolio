@@ -63,20 +63,36 @@ body {
 }
 
 /* ============================================================
-   NAVBAR
+   NAVBAR (FLOATING GLASSMORPHISM PILL)
    ============================================================ */
 #mainNav {
-  background: rgba(10,10,15,.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  transition: background var(--transition), padding var(--transition);
-  padding: .75rem 0;
+  position: fixed;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2.5rem);
+  max-width: 1140px;
+  background: rgba(12, 12, 22, 0.78);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45), 0 0 20px rgba(124, 58, 237, 0.12);
+  transition: top var(--transition), background var(--transition), padding var(--transition), border-color var(--transition), box-shadow var(--transition);
+  padding: .6rem .75rem;
   z-index: 1050;
 }
+#mainNav .container {
+  max-width: 100%;
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
 #mainNav.scrolled {
-  padding: .4rem 0;
-  background: rgba(10,10,15,.97);
+  top: .75rem;
+  padding: .45rem .75rem;
+  background: rgba(8, 8, 16, 0.94);
+  border-color: rgba(124, 58, 237, 0.35);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.65), 0 0 30px rgba(124, 58, 237, 0.25);
 }
 
 .brand-avatar {
@@ -1021,7 +1037,16 @@ body {
   /* Global spacing */
   .section-padded { padding: 70px 0; }
 
-  /* Mobile nav is now handled by .mobile-menu-overlay (full-screen overlay) */
+  /* Floating navbar mobile spacing */
+  #mainNav {
+    top: .75rem;
+    width: calc(100% - 1.25rem);
+    border-radius: 16px;
+    padding: .5rem .75rem;
+  }
+  #mainNav.scrolled {
+    top: .5rem;
+  }
 
   /* Hero */
   .hero-section   { padding: 90px 0 50px; }
