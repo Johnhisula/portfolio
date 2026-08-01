@@ -20,7 +20,7 @@ define('SITE', [
 define('SKILLS', [
     'UI/UX Design' => [
         ['name' => 'Figma',                  'level' => 85],
-        ['name' => 'Wireframing',            'level' => 88],
+        ['name' => 'Wireframing',            'level' => 75],
         ['name' => 'Prototyping',            'level' => 82],
         ['name' => 'User Interface Design',  'level' => 86],
         ['name' => 'Canva',                  'level' => 90],

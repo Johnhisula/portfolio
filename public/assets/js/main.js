@@ -105,43 +105,64 @@ if (nav) {
   onScroll();
 }
 
-// ── 1b. Hamburger left-drawer toggle ──────────────────────
+// ── 1b. Mobile full-screen overlay menu ───────────────────
 (function () {
-  const toggler = document.querySelector('.navbar-toggler');
-  const menu    = document.getElementById('navbarMenu');
-  if (!toggler || !menu) return;
+  const toggler = document.getElementById('mobileMenuToggle');
+  const overlay = document.getElementById('mobileMenuOverlay');
+  if (!toggler || !overlay) return;
 
-  // Create full-screen overlay
-  const overlay = document.createElement('div');
-  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1039;display:none;';
-  document.body.appendChild(overlay);
+  let isOpen = false;
 
-  const openDrawer = () => {
-    menu.classList.add('show');
-    overlay.style.display = 'block';
+  const openMenu = () => {
+    isOpen = true;
+    toggler.classList.add('is-open');
     toggler.setAttribute('aria-expanded', 'true');
+    overlay.classList.add('is-open');
+    overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   };
 
-  const closeDrawer = () => {
-    menu.classList.remove('show');
-    overlay.style.display = 'none';
+  const closeMenu = () => {
+    isOpen = false;
+    toggler.classList.remove('is-open');
     toggler.setAttribute('aria-expanded', 'false');
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   };
 
   toggler.addEventListener('click', (e) => {
     e.stopPropagation();
-    menu.classList.contains('show') ? closeDrawer() : openDrawer();
+    isOpen ? closeMenu() : openMenu();
   });
 
-  // Close on overlay tap
-  overlay.addEventListener('click', closeDrawer);
-
-  // Close when any nav link is tapped
-  menu.querySelectorAll('.nav-link, .hire-btn').forEach(link => {
-    link.addEventListener('click', closeDrawer);
+  // Close when any mobile nav link is clicked
+  overlay.querySelectorAll('.mobile-menu-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
   });
+
+  // Close on background click
+  overlay.querySelector('.mobile-menu-bg')?.addEventListener('click', closeMenu);
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isOpen) closeMenu();
+  });
+
+  // Sync mobile theme toggle with desktop
+  const mobileThemeBtn = document.getElementById('themeToggleMobile');
+  const desktopThemeBtn = document.getElementById('themeToggle');
+  if (mobileThemeBtn && desktopThemeBtn) {
+    mobileThemeBtn.addEventListener('click', () => {
+      desktopThemeBtn.click();
+      // Sync icon
+      const desktopIcon = document.getElementById('themeIcon');
+      const mobileIcon = document.getElementById('themeIconMobile');
+      if (desktopIcon && mobileIcon) {
+        mobileIcon.className = desktopIcon.className;
+      }
+    });
+  }
 })();
 
 // ── 1c. Skills tab switcher ────────────────────────────────
