@@ -45,9 +45,9 @@ $navLinks = [
                 <!-- Theme toggle & Hire Me -->
                 <li class="nav-item ms-lg-2">
                     <div id="navRight" class="d-flex align-items-center gap-2">
-                        <a href="#contact" class="nav-resume-btn">
-                            <span class="nav-resume-btn__text">Hire Me</span>
-                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        <a href="<?= ASSETS_PATH ?>/files/Resume.pdf" class="nav-resume-btn" download>
+                            <i class="bi bi-file-earmark-arrow-down-fill" aria-hidden="true"></i>
+                            <span class="nav-resume-btn__text">Resume</span>
                         </a>
                         <button id="themeToggle" class="btn btn-sm theme-btn" aria-label="Toggle colour scheme">
                             <i class="bi bi-sun-fill" id="themeIcon" aria-hidden="true"></i>
