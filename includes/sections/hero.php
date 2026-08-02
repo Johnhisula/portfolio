@@ -14,11 +14,6 @@
 
             <!-- Text column -->
             <div class="col-lg-7 hero-text">
-                <div class="hero-badge mb-3">
-                    <span class="status-dot" aria-hidden="true"></span>
-                    Available for new projects
-                </div>
-
                 <h1 class="hero-title">
                     Hi, I am
                     <span class="text-gradient"><?= e($site['name']) ?></span>
