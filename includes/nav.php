@@ -42,11 +42,12 @@ $navLinks = [
                 </li>
                 <?php endforeach; ?>
 
-                <!-- Theme toggle & Resume -->
+                <!-- Theme toggle & Hire Me -->
                 <li class="nav-item ms-lg-2">
                     <div id="navRight" class="d-flex align-items-center gap-2">
-                        <a href="<?= ASSETS_PATH ?>/files/Resume.pdf" class="btn btn-sm btn-primary" download>
-                            <i class="bi bi-file-earmark-arrow-down-fill me-1" aria-hidden="true"></i>Resume
+                        <a href="#contact" class="nav-resume-btn">
+                            <span class="nav-resume-btn__text">Hire Me</span>
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
                         </a>
                         <button id="themeToggle" class="btn btn-sm theme-btn" aria-label="Toggle colour scheme">
                             <i class="bi bi-sun-fill" id="themeIcon" aria-hidden="true"></i>
