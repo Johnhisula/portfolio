@@ -83,6 +83,7 @@ if (isset($_SESSION['flash'])) {
         <?php require_once INCLUDES_PATH . '/sections/hero.php'; ?>
         <?php require_once INCLUDES_PATH . '/sections/about.php'; ?>
         <?php require_once INCLUDES_PATH . '/sections/skills.php'; ?>
+        <?php require_once INCLUDES_PATH . '/sections/experience.php'; ?>
         <?php require_once INCLUDES_PATH . '/sections/projects.php'; ?>
         <?php require_once INCLUDES_PATH . '/sections/certificates.php'; ?>
         <?php require_once INCLUDES_PATH . '/sections/contact.php'; ?>

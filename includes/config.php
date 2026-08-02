@@ -224,3 +224,60 @@ define('CERTIFICATES', [
         'tags'       => ['Research', 'IT 324', 'Precision Agriculture', 'DNSC'],
     ],
 ]);
+
+// ─────────────────────────────────────────────
+// Experience Data
+// ─────────────────────────────────────────────
+define('EXPERIENCE', [
+    [
+        'title'       => 'Front-End Developer',
+        'type'        => 'project',
+        'company'     => 'AidLens — Capstone Project',
+        'location'    => 'Davao Del Norte State College',
+        'date_start'  => '2025',
+        'date_end'    => '2026',
+        'color'       => '#7c3aed',
+        'icon'        => 'bi-code-slash',
+        'description' => 'Beneficiary Assistance and Welfare Monitoring System Using Data Mining',
+        'tasks'       => [
+            'Designed system architecture, database structure, and user interfaces.',
+            'Conducted requirements analysis and developed system models (DFD, ERD, Use Case).',
+            'Collaborated in system implementation, testing, and documentation.',
+            'Contributed to data-driven beneficiary management and assistance tracking.',
+        ],
+    ],
+    [
+        'title'       => 'Information Technology Intern',
+        'type'        => 'work',
+        'company'     => 'Davao Del Norte State College',
+        'location'    => 'Institute of Computing — Technician',
+        'date_start'  => 'Feb 2026',
+        'date_end'    => 'May 2026',
+        'color'       => '#0ea5e9',
+        'icon'        => 'bi-pc-display',
+        'description' => null,
+        'tasks'       => [
+            'Provided technical assistance and troubleshooting support for computer systems.',
+            'Assisted in software installation, maintenance, and configuration.',
+            'Conducted data entry and documentation tasks.',
+            'Supported system testing and quality assurance activities.',
+            'Collaborated with staff to resolve technical issues and improve operational efficiency.',
+        ],
+    ],
+    [
+        'title'       => 'Data Entry Specialist',
+        'type'        => 'work',
+        'company'     => 'Maryknoll College of Panabo, Inc.',
+        'location'    => 'Panabo City, Davao del Norte',
+        'date_start'  => 'Jan 2025',
+        'date_end'    => 'Mar 2025',
+        'color'       => '#f59e0b',
+        'icon'        => 'bi-database-fill-gear',
+        'description' => null,
+        'tasks'       => [
+            'Performed data entry and maintenance of student records.',
+            'Verified and updated student information for accuracy.',
+            'Organized and maintained student database records.',
+        ],
+    ],
+]);

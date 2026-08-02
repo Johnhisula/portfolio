@@ -4,6 +4,7 @@ $site = SITE;
 $navLinks = [
     ['href' => '#about',        'label' => 'About',        'icon' => 'bi-person-fill'],
     ['href' => '#skills',       'label' => 'Skills',       'icon' => 'bi-lightning-charge-fill'],
+    ['href' => '#experience',   'label' => 'Experience',   'icon' => 'bi-briefcase-fill'],
     ['href' => '#projects',     'label' => 'Projects',     'icon' => 'bi-code-slash'],
     ['href' => '#certificates', 'label' => 'Certificates', 'icon' => 'bi-award-fill'],
     ['href' => '#contact',      'label' => 'Contact',      'icon' => 'bi-envelope-fill'],

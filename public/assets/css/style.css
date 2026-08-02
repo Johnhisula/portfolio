@@ -697,6 +697,181 @@ body {
 .project-modal .modal-footer { border-color:var(--border); padding:1rem 1.5rem; }
 
 /* ============================================================
+   EXPERIENCE TIMELINE
+   ============================================================ */
+.exp-timeline {
+  position: relative;
+  max-width: 820px;
+  margin: 0 auto;
+}
+.exp-timeline-item {
+  display: flex;
+  gap: 1.5rem;
+  position: relative;
+}
+.exp-timeline-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+.exp-timeline-dot {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid var(--exp-color, var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--exp-color, var(--accent));
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.15);
+  flex-shrink: 0;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.exp-timeline-item:hover .exp-timeline-dot {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--exp-color, var(--accent)) 40%, transparent);
+}
+.exp-timeline-line {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(to bottom, var(--exp-color, var(--accent)) 0%, var(--border) 100%);
+  opacity: .3;
+  margin-top: .25rem;
+}
+
+/* Card */
+.exp-card {
+  flex: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+  position: relative;
+}
+.exp-card::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: -10px;
+  width: 10px;
+  height: 10px;
+  background: var(--bg-card);
+  border-left: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  transform: rotate(45deg);
+}
+.exp-card:hover {
+  border-color: var(--exp-color, var(--accent));
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2), 0 0 20px color-mix(in srgb, var(--exp-color, var(--accent)) 12%, transparent);
+  transform: translateY(-2px);
+}
+
+/* Card header */
+.exp-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.exp-card__title-wrap { flex: 1; }
+.exp-card__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: .4rem 0 .3rem;
+  color: var(--text);
+}
+.exp-card__company {
+  font-size: .88rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: .15rem;
+}
+.exp-card__company i { color: var(--exp-color, var(--accent)); }
+.exp-card__location {
+  font-size: .82rem;
+  color: var(--text-muted);
+  opacity: .75;
+  margin-bottom: 0;
+}
+.exp-card__location i { color: var(--exp-color, var(--accent)); opacity: .7; }
+.exp-card__date {
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--exp-color, var(--accent));
+  white-space: nowrap;
+  background: color-mix(in srgb, var(--exp-color, var(--accent)) 10%, transparent);
+  padding: .35rem .8rem;
+  border-radius: 99px;
+  border: 1px solid color-mix(in srgb, var(--exp-color, var(--accent)) 20%, transparent);
+  height: fit-content;
+}
+
+/* Type badges */
+.exp-type-badge {
+  display: inline-block;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: .2rem .6rem;
+  border-radius: 6px;
+}
+.exp-type--project {
+  background: rgba(124, 58, 237, .12);
+  color: #a78bfa;
+  border: 1px solid rgba(124, 58, 237, .25);
+}
+.exp-type--work {
+  background: rgba(14, 165, 233, .12);
+  color: #38bdf8;
+  border: 1px solid rgba(14, 165, 233, .25);
+}
+
+/* Description */
+.exp-card__desc {
+  font-size: .9rem;
+  color: var(--text-muted);
+  margin-bottom: .75rem;
+  padding: .6rem .8rem;
+  background: rgba(255, 255, 255, .03);
+  border-left: 3px solid var(--exp-color, var(--accent));
+  border-radius: 0 8px 8px 0;
+}
+
+/* Task list */
+.exp-card__tasks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.exp-card__tasks li {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  font-size: .88rem;
+  color: var(--text-muted);
+  padding: .4rem 0;
+  line-height: 1.55;
+}
+.exp-card__tasks li i {
+  color: var(--exp-color, var(--accent));
+  font-size: .75rem;
+  margin-top: .3rem;
+  flex-shrink: 0;
+}
+.exp-card__tasks li + li {
+  border-top: 1px solid rgba(255, 255, 255, .04);
+}
+
+/* ============================================================
    CONTACT
    ============================================================ */
 .contact-intro { color:var(--text-muted); line-height:1.8; }
