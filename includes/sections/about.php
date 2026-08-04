@@ -35,22 +35,23 @@
                 <div class="about-content">
                     <p class="about-intro">
                         I'm a <strong>Bachelor of Science in Information Technology</strong> graduate from <strong>Davao Del Norte State College</strong>,
-                        passionate about <strong>UI/UX Design</strong>, <strong>Front-End Development</strong>, and <strong>Data Entry</strong> —
-                        crafting clean, intuitive, and visually engaging digital experiences.
+                        specializing in <strong>Front-End Development</strong> — building responsive, interactive, and accessible
+                        web interfaces that deliver great user experiences.
                     </p>
                     <p class="about-body">
-                        I love turning ideas into beautiful, functional interfaces. From wireframes and prototypes
-                        to responsive web pages, I focus on creating designs that are not just attractive but
-                        also user-centered and accessible.
+                        As a Front-End Developer, I transform designs into fully functional web pages using
+                        <strong>HTML, CSS, and JavaScript</strong>. I build responsive layouts that look great on any device,
+                        implement smooth animations, and ensure cross-browser compatibility.
                     </p>
                     <p class="about-body">
-                        With hands-on experience from internship and real-world projects,
-                        I thrive on collaborating with teams and continuously growing my skills in design tools and
-                        modern front-end technologies.
+                        I work closely with UI/UX designers to translate wireframes and mockups into pixel-perfect code,
+                        optimize website performance for fast loading times, and write clean, maintainable code
+                        following modern best practices.
                     </p>
                     <p class="about-body">
-                        As a <strong>Data Entry Specialist</strong>, I bring precision, speed, and attention to detail
-                        in managing and organizing data — ensuring accuracy and efficiency in every task.
+                        With hands-on experience from internship and real-world projects, I continuously
+                        grow my skills in modern frameworks and front-end technologies to build
+                        better digital experiences.
                     </p>
 
                     <!-- Quick facts -->
@@ -58,7 +59,7 @@
                         <?php
                         $facts = [
                             ['icon' => 'bi-geo-alt-fill',    'label' => 'Location',  'value' => 'Panabo City, Davao Del Norte'],
-                            ['icon' => 'bi-briefcase-fill',  'label' => 'Role',      'value' => 'Front-End Developer & Data Entry Specialist'],
+                            ['icon' => 'bi-briefcase-fill',  'label' => 'Role',      'value' => 'Front-End Developer'],
                             ['icon' => 'bi-search',           'label' => 'Status',    'value' => 'Open to Opportunities'],
                             ['icon' => 'bi-mortarboard-fill','label' => 'Education', 'value' => 'BS Information Technology – Davao Del Norte State College'],
                             ['icon' => 'bi-envelope-fill',   'label' => 'Email',     'value' => $site['email']],

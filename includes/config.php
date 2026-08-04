@@ -5,13 +5,13 @@
 
 define('SITE', [
     'name'        => 'Niño R. Hisula',
-    'role'        => 'UI/UX Designer & Front-End Developer',
-    'tagline'     => 'I design beautiful, user-friendly interfaces and bring them to life with clean, modern code.',
+    'role'        => 'Front-End Developer',
+    'tagline'     => 'I build responsive, interactive, and visually stunning web interfaces using HTML, CSS, JavaScript, and modern frameworks.',
     'email'       => 'johnjohnhisula@gmail.com',
     'github'      => 'https://github.com/',
     'linkedin'    => 'https://linkedin.com/',
     'twitter'     => 'https://twitter.com/',
-    'description' => 'Personal portfolio of Niño R. Hisula — UI/UX Designer and Front-End Developer specializing in responsive web design and user experience.',
+    'description' => 'Personal portfolio of Niño R. Hisula — Front-End Developer specializing in building responsive, accessible, and modern web interfaces.',
 ]);
 
 // ─────────────────────────────────────────────
