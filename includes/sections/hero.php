@@ -14,12 +14,15 @@
 
             <!-- Text column -->
             <div class="col-lg-7 hero-text">
+                <div class="hero-role-badge">
+                    <span class="hero-role-dot"></span>
+                    <span><?= e($site['role']) ?></span>
+                </div>
+
                 <h1 class="hero-title">
                     Hi, I am
                     <span class="text-gradient"><?= e($site['name']) ?></span>
                 </h1>
-
-
 
                 <p class="hero-tagline"><?= e($site['tagline']) ?></p>
 
@@ -30,7 +33,6 @@
                     <a href="#contact" class="btn btn-outline-light btn-lg hero-btn-secondary">
                         <i class="bi bi-send-fill me-2" aria-hidden="true"></i>Get In Touch
                     </a>
-
                 </div>
 
                 <!-- Tech strip -->
@@ -46,7 +48,30 @@
                 </div>
             </div>
 
-
+            <!-- Hero visual column — profile image -->
+            <div class="col-lg-5 d-flex justify-content-center hero-visual">
+                <div class="hero-profile-wrap">
+                    <!-- Decorative rings -->
+                    <div class="hero-ring hero-ring--outer" aria-hidden="true"></div>
+                    <div class="hero-ring hero-ring--inner" aria-hidden="true"></div>
+                    <!-- Floating accent dots -->
+                    <div class="hero-float-dot hero-float-dot--1" aria-hidden="true"></div>
+                    <div class="hero-float-dot hero-float-dot--2" aria-hidden="true"></div>
+                    <div class="hero-float-dot hero-float-dot--3" aria-hidden="true"></div>
+                    <!-- Profile image -->
+                    <div class="hero-profile-img">
+                        <?php $profilePath = PUBLIC_PATH . '/assets/images/profile.jpg'; ?>
+                        <img src="<?= ASSETS_PATH ?>/images/profile.jpg?v=<?= filemtime($profilePath) ?>"
+                             alt="<?= e($site['name']) ?>"
+                             loading="eager">
+                    </div>
+                    <!-- Status badge -->
+                    <div class="hero-status-badge">
+                        <span class="hero-status-dot"></span>
+                        Open to work
+                    </div>
+                </div>
+            </div>
 
         </div>
 
@@ -58,4 +83,5 @@
             <span>Scroll down</span>
         </div>
     </div>
+
 </section>
