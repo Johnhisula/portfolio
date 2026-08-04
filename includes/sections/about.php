@@ -9,21 +9,10 @@
             <div class="section-divider" aria-hidden="true"></div>
         </div>
 
-        <div class="row align-items-center gy-5">
-
-            <!-- Avatar column -->
-            <div class="col-lg-5 text-center" data-aos="fade-right">
-                <div class="about-avatar-wrap">
-                    <div class="about-avatar">
-                        <?php $profilePath = PUBLIC_PATH . '/assets/images/profile.jpg'; ?>
-                        <img src="<?= ASSETS_PATH ?>/images/profile.jpg?v=<?= filemtime($profilePath) ?>" alt="<?= e($site['name']) ?>" class="avatar-img">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Content column -->
-            <div class="col-lg-7" data-aos="fade-left">
-                <div class="about-content">
+        <!-- About content — full width, no image -->
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-10">
+                <div class="about-content about-content--centered">
                     <p class="about-intro">
                         I'm a <strong>Front-End Developer</strong> with a degree in <strong>Information Technology</strong>,
                         passionate about crafting high-quality, responsive web experiences that combine
@@ -46,37 +35,42 @@
                         of the curve — committed to delivering digital products that are not only
                         visually compelling but also built to last.
                     </p>
+                </div>
 
-                    <!-- Quick facts -->
-                    <ul class="about-facts list-unstyled mt-4">
-                        <?php
-                        $facts = [
-                            ['icon' => 'bi-geo-alt-fill',    'label' => 'Location',   'value' => 'Panabo City, Davao Del Norte'],
-                            ['icon' => 'bi-briefcase-fill',  'label' => 'Role',       'value' => 'Front-End Developer'],
-                            ['icon' => 'bi-mortarboard-fill','label' => 'Education',  'value' => 'BS in Information Technology'],
-                            ['icon' => 'bi-search',          'label' => 'Status',     'value' => 'Open to Opportunities'],
-                            ['icon' => 'bi-envelope-fill',   'label' => 'Email',      'value' => $site['email']],
-                        ];
-                        foreach ($facts as $fact): ?>
-                        <li class="fact-item">
-                            <span class="fact-icon"><i class="bi <?= e($fact['icon']) ?>" aria-hidden="true"></i></span>
-                            <span class="fact-label"><?= e($fact['label']) ?>:</span>
-                            <span class="fact-value"><?= e($fact['value']) ?></span>
-                        </li>
-                        <?php endforeach; ?>
-                    </ul>
-
-                    <div class="mt-4 d-flex gap-3 flex-wrap">
-                        <a href="#contact" class="btn btn-primary">
-                            <i class="bi bi-chat-dots-fill me-2" aria-hidden="true"></i>Let's Talk
-                        </a>
-                        <a href="<?= ASSETS_PATH ?>/files/Resume.pdf" class="btn btn-outline-light" download>
-                            <i class="bi bi-file-earmark-arrow-down-fill me-2" aria-hidden="true"></i>Download Resume
-                        </a>
+                <!-- Quick facts — grid layout -->
+                <div class="about-facts-grid mt-5" data-aos="fade-up" data-aos-delay="200">
+                    <?php
+                    $facts = [
+                        ['icon' => 'bi-geo-alt-fill',    'label' => 'Location',  'value' => 'Panabo City, Davao Del Norte', 'color' => '#f59e0b'],
+                        ['icon' => 'bi-briefcase-fill',  'label' => 'Role',      'value' => 'Front-End Developer',          'color' => '#7c3aed'],
+                        ['icon' => 'bi-mortarboard-fill','label' => 'Education', 'value' => 'BS in Information Technology', 'color' => '#0ea5e9'],
+                        ['icon' => 'bi-search',          'label' => 'Status',    'value' => 'Open to Opportunities',        'color' => '#22c55e'],
+                        ['icon' => 'bi-envelope-fill',   'label' => 'Email',     'value' => $site['email'],                 'color' => '#ec4899'],
+                    ];
+                    foreach ($facts as $fact): ?>
+                    <div class="about-fact-card" style="--fact-color: <?= e($fact['color']) ?>">
+                        <div class="about-fact-card__icon">
+                            <i class="bi <?= e($fact['icon']) ?>" aria-hidden="true"></i>
+                        </div>
+                        <div class="about-fact-card__text">
+                            <span class="about-fact-card__label"><?= e($fact['label']) ?></span>
+                            <span class="about-fact-card__value"><?= e($fact['value']) ?></span>
+                        </div>
                     </div>
+                    <?php endforeach; ?>
+                </div>
+
+                <!-- CTA buttons -->
+                <div class="mt-5 d-flex gap-3 flex-wrap justify-content-center" data-aos="fade-up" data-aos-delay="300">
+                    <a href="#contact" class="btn btn-primary btn-lg">
+                        <i class="bi bi-chat-dots-fill me-2" aria-hidden="true"></i>Let's Talk
+                    </a>
+                    <a href="<?= ASSETS_PATH ?>/files/Resume.pdf" class="btn btn-outline-light btn-lg" download>
+                        <i class="bi bi-file-earmark-arrow-down-fill me-2" aria-hidden="true"></i>Download Resume
+                    </a>
                 </div>
             </div>
-
         </div>
+
     </div>
 </section>
