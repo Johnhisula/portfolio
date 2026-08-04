@@ -18,15 +18,6 @@
                         <?php $profilePath = PUBLIC_PATH . '/assets/images/profile.jpg'; ?>
                         <img src="<?= ASSETS_PATH ?>/images/profile.jpg?v=<?= filemtime($profilePath) ?>" alt="<?= e($site['name']) ?>" class="avatar-img">
                     </div>
-                    <!-- Floating stat bubbles -->
-                    <div class="stat-bubble stat-bubble--tl" aria-label="BSIT Graduate">
-                        <span class="stat-num">BSIT</span>
-                        <span class="stat-lbl">Graduate</span>
-                    </div>
-                    <div class="stat-bubble stat-bubble--br" aria-label="6 projects delivered">
-                        <span class="stat-num">6+</span>
-                        <span class="stat-lbl">Projects</span>
-                    </div>
                 </div>
             </div>
 
