@@ -7,7 +7,7 @@ define('SITE', [
     'name'        => 'Niño R. Hisula',
     'role'        => 'Front-End Developer',
     'tagline'     => 'I build responsive, interactive, and visually stunning web interfaces using HTML, CSS, JavaScript, and modern frameworks.',
-    'email'       => 'johnjohnhisula@gmail.com',
+    'email'       => 'ninohisula@gmail.com',
     'github'      => 'https://github.com/',
     'linkedin'    => 'https://linkedin.com/',
     'twitter'     => 'https://twitter.com/',
