@@ -34,35 +34,37 @@
             <div class="col-lg-7" data-aos="fade-left">
                 <div class="about-content">
                     <p class="about-intro">
-                        I'm a <strong>Bachelor of Science in Information Technology</strong> graduate from <strong>Davao Del Norte State College</strong>,
-                        specializing in <strong>Front-End Development</strong> — building responsive, interactive, and accessible
-                        web interfaces that deliver great user experiences.
+                        I'm a <strong>Front-End Developer</strong> with a degree in <strong>Information Technology</strong>,
+                        passionate about crafting high-quality, responsive web experiences that combine
+                        clean code with thoughtful design.
                     </p>
                     <p class="about-body">
-                        As a Front-End Developer, I transform designs into fully functional web pages using
-                        <strong>HTML, CSS, and JavaScript</strong>. I build responsive layouts that look great on any device,
-                        implement smooth animations, and ensure cross-browser compatibility.
+                        I specialize in building modern, performant user interfaces using
+                        <strong>HTML, CSS, and JavaScript</strong>. From pixel-perfect layouts to fluid animations
+                        and seamless cross-browser compatibility — I ensure every detail is polished
+                        and every interaction feels intuitive.
                     </p>
                     <p class="about-body">
-                        I work closely with UI/UX designers to translate wireframes and mockups into pixel-perfect code,
-                        optimize website performance for fast loading times, and write clean, maintainable code
-                        following modern best practices.
+                        My workflow bridges the gap between design and development. I collaborate closely
+                        with designers to translate wireframes and prototypes into production-ready code,
+                        while maintaining a strong focus on <strong>accessibility</strong>, <strong>performance optimization</strong>,
+                        and <strong>scalable architecture</strong>.
                     </p>
                     <p class="about-body">
-                        With hands-on experience from internship and real-world projects, I continuously
-                        grow my skills in modern frameworks and front-end technologies to build
-                        better digital experiences.
+                        I'm always exploring new technologies and best practices to stay ahead
+                        of the curve — committed to delivering digital products that are not only
+                        visually compelling but also built to last.
                     </p>
 
                     <!-- Quick facts -->
                     <ul class="about-facts list-unstyled mt-4">
                         <?php
                         $facts = [
-                            ['icon' => 'bi-geo-alt-fill',    'label' => 'Location',  'value' => 'Panabo City, Davao Del Norte'],
-                            ['icon' => 'bi-briefcase-fill',  'label' => 'Role',      'value' => 'Front-End Developer'],
-                            ['icon' => 'bi-search',           'label' => 'Status',    'value' => 'Open to Opportunities'],
-                            ['icon' => 'bi-mortarboard-fill','label' => 'Education', 'value' => 'BS Information Technology – Davao Del Norte State College'],
-                            ['icon' => 'bi-envelope-fill',   'label' => 'Email',     'value' => $site['email']],
+                            ['icon' => 'bi-geo-alt-fill',    'label' => 'Location',   'value' => 'Panabo City, Davao Del Norte'],
+                            ['icon' => 'bi-briefcase-fill',  'label' => 'Role',       'value' => 'Front-End Developer'],
+                            ['icon' => 'bi-mortarboard-fill','label' => 'Education',  'value' => 'BS in Information Technology'],
+                            ['icon' => 'bi-search',          'label' => 'Status',     'value' => 'Open to Opportunities'],
+                            ['icon' => 'bi-envelope-fill',   'label' => 'Email',      'value' => $site['email']],
                         ];
                         foreach ($facts as $fact): ?>
                         <li class="fact-item">
