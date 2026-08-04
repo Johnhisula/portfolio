@@ -19,11 +19,7 @@
                     <span class="text-gradient"><?= e($site['name']) ?></span>
                 </h1>
 
-                <p class="hero-role">
-                    <span class="role-prefix">// </span>
-                    <span id="typedRole" class="typed-text" aria-label="<?= e($site['role']) ?>"></span>
-                    <span class="typed-cursor" aria-hidden="true">|</span>
-                </p>
+
 
                 <p class="hero-tagline"><?= e($site['tagline']) ?></p>
 
@@ -50,35 +46,7 @@
                 </div>
             </div>
 
-            <!-- Avatar / Code card column -->
-            <div class="col-lg-5 d-flex justify-content-center hero-visual">
-                <div class="code-card" aria-hidden="true">
-                    <div class="code-card__bar">
-                        <span class="dot dot-red"></span>
-                        <span class="dot dot-yellow"></span>
-                        <span class="dot dot-green"></span>
-                        <span class="code-card__filename">designer.php</span>
-                    </div>
-                    <pre class="code-card__body"><code><span class="cc-kw">class</span> <span class="cc-cls">Designer</span> {
 
-  <span class="cc-kw">public</span> <span class="cc-fn">function</span> <span class="cc-method">__construct</span>(
-    <span class="cc-kw">private readonly</span> <span class="cc-type">string</span> <span class="cc-var">$name</span> = <span class="cc-str">'<?= e($site['name']) ?>'</span>,
-    <span class="cc-kw">private readonly</span> <span class="cc-type">string</span> <span class="cc-var">$role</span> = <span class="cc-str">'UI/UX & Front-End'</span>,
-  ) {}
-
-  <span class="cc-kw">public function</span> <span class="cc-method">skills</span>(): <span class="cc-type">array</span>
-  {
-    <span class="cc-kw">return</span> [<span class="cc-str">'Figma'</span>, <span class="cc-str">'CSS3'</span>, <span class="cc-str">'Bootstrap'</span>];
-  }
-
-  <span class="cc-kw">public function</span> <span class="cc-method">passion</span>(): <span class="cc-type">string</span>
-  {
-    <span class="cc-kw">return</span> <span class="cc-str">'Beautiful UIs'</span>;
-  }
-}</code></pre>
-                </div>
-
-            </div>
 
         </div>
 
